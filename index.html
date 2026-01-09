@@ -3,389 +3,638 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DESI FF ESPORTS — SUNDAY SHOWDOWN | Registration</title>
+    <title>Sunday Showdown - FreeFire Leaderboard Edition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
-            margin:  0;
+            margin: 0;
             padding: 0;
-            box-sizing:  border-box;
+            box-sizing: border-box;
+            font-family: 'Teko', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
+        @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-            color: #ffffff;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
-            overflow: hidden;
-        }
-
-        . header {
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
-            padding: 30px;
-            text-align:  center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '⚡';
-            position: absolute;
-            font-size: 200px;
-            opacity: 0.1;
-            left: -50px;
-            top: -50px;
-            animation: pulse 2s infinite;
-        }
-
-        . header:: after {
-            content: '🔥';
-            position: absolute;
-            font-size: 200px;
-            opacity: 0.1;
-            right: -50px;
-            top:  -50px;
-            animation:  pulse 2s infinite 1s;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        . header h1 {
-            font-size: 2.5em;
-            font-weight: 900;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-            letter-spacing: 2px;
-            margin-bottom:  10px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header . subtitle {
-            font-size:  1.2em;
-            font-weight: 600;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-        }
-
-        .content {
-            padding: 40px 30px;
-        }
-
-        .section {
-            margin-bottom: 40px;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 15px;
-            border-left: 4px solid #ffd700;
-        }
-
-        .section-title {
-            font-size:  1.8em;
-            margin-bottom: 20px;
-            color: #ffd700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .match-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin:  20px 0;
-        }
-
-        .detail-card {
-            background: rgba(255, 215, 0, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        . detail-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
-        }
-
-        .detail-icon {
-            font-size: 2em;
-            margin-bottom:  10px;
-        }
-
-        .detail-label {
-            font-size: 0.9em;
-            opacity: 0.8;
-            margin-bottom: 5px;
-        }
-
-        .detail-value {
-            font-size:  1.3em;
-            font-weight:  700;
-            color: #ffd700;
-        }
-
-        .register-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            color: white;
-            padding: 18px 50px;
-            font-size:  1.3em;
-            font-weight:  700;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
-            text-align: center;
-            margin:  20px 0;
-            animation: glow 2s infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4); }
-            50% { box-shadow: 0 5px 30px rgba(255, 107, 53, 0.8); }
-        }
-
-        . register-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.6);
-        }
-
-        .warning-box {
-            background: rgba(255, 0, 0, 0.1);
-            border: 2px solid rgba(255, 0, 0, 0.3);
-            padding: 15px;
-            border-radius:  10px;
-            margin:  15px 0;
-        }
-
-        .success-box {
-            background: rgba(0, 255, 0, 0.1);
-            border: 2px solid rgba(0, 255, 0, 0.3);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-        }
-
-        .info-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .info-list li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
+            background-color: #0a0e17;
+            color: #fff;
             line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'),
+                radial-gradient(circle at 10% 20%, rgba(255, 94, 0, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(255, 30, 0, 0.15) 0%, transparent 25%);
+            background-blend-mode: overlay;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
         }
-
-        .info-list li:: before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #ffd700;
-            font-weight: 900;
-            font-size: 1.2em;
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-
-        .referral-box {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
-            padding: 20px;
-            border-radius:  15px;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            margin: 20px 0;
+        
+        /* Header Styles */
+        header {
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(255, 30, 0, 0.4);
+            border-bottom: 3px solid #ff5e00;
         }
-
-        .social-links {
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-container {
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin:  20px 0;
-        }
-
-        .social-btn {
-            display: flex;
+            justify-content: center;
             align-items: center;
             gap: 15px;
-            padding: 15px 25px;
-            background: rgba(255, 255, 255, 0.05);
-            border:  2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            margin-bottom: 15px;
         }
-
-        .social-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #ffd700;
-            transform:  translateX(10px);
+        
+        .ff-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff5e00 0%, #ffcc00 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 0 15px rgba(255, 94, 0, 0.7);
+            transform: rotate(-5deg);
         }
-
-        . social-icon {
-            font-size: 1.5em;
-            width: 40px;
-            text-align: center;
-        }
-
-        .footer {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            text-align: center;
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #ffd700;
-        }
-
-        .highlight {
-            color: #ffd700;
+        
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 94, 0, 0.5);
+            background: linear-gradient(to right, #FFD700, #FF8C00, #FF4500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
             font-weight: 700;
         }
-
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #ffd;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        
+        .fire-icon {
+            color: #FFD700;
+            animation: pulse 2s infinite;
+            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.7));
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); text-shadow: 0 0 15px rgba(255, 215, 0, 0.9); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+        }
+        
+        .event-highlight {
+            background: rgba(0, 0, 0, 0.7);
+            border-left: 5px solid #ff5e00;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 94, 0, 0.3);
+        }
+        
+        .event-highlight:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        .highlight-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        
+        /* Match Cards */
+        .matches-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .match-card {
+            flex: 1;
+            min-width: 300px;
+            background: linear-gradient(145deg, rgba(26, 31, 46, 0.9) 0%, rgba(21, 25, 37, 0.9) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border: 2px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .match-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .match-card.paid:before {
+            background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+        }
+        
+        .match-card.free:before {
+            background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+        }
+        
+        .match-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+        }
+        
+        .match-card.paid {
+            border-top-color: #ffcc00;
+            border-bottom-color: #ffcc00;
+        }
+        
+        .match-card.free {
+            border-top-color: #00cc66;
+            border-bottom-color: #00cc66;
+        }
+        
+        .match-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        
+        .match-title i {
+            font-size: 2.2rem;
+        }
+        
+        .prize-info {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .prize-info:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #ffcc00, #ff5e00);
+        }
+        
+        .prize-amount {
+            font-size: 2.2rem;
+            color: #ffcc00;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+        }
+        
+        /* Character Image */
+        .character-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .character-img {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 0 15px rgba(255, 94, 0, 0.7));
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        /* Info Sections */
+        .info-section {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(255, 94, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .info-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: #ff5e00;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        
+        .features-list {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        
+        .features-list li {
+            padding: 12px 0;
+            padding-left: 40px;
+            position: relative;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            color: #00cc66;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 10px;
+            text-shadow: 0 0 10px rgba(0, 204, 102, 0.7);
+        }
+        
+        /* Links Section */
+        .links-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .link-card {
+            flex: 1;
+            min-width: 250px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 94, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .link-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 94, 0, 0.1), transparent);
+            z-index: -1;
+        }
+        
+        .link-card:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: translateY(-8px) scale(1.03);
+            border-color: #ff5e00;
+            box-shadow: 0 15px 30px rgba(255, 94, 0, 0.3);
+        }
+        
+        .link-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff5e00;
+            text-shadow: 0 0 10px rgba(255, 94, 0, 0.7);
+        }
+        
+        .link-button {
+            display: inline-block;
+            background: linear-gradient(to right, #ff5e00, #ff1e00);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(255, 94, 0, 0.4);
+        }
+        
+        .link-button:hover {
+            background: linear-gradient(to right, #ff6f1a, #ff2e0a);
+            box-shadow: 0 8px 20px rgba(255, 94, 0, 0.6);
+            transform: translateY(-3px);
+        }
+        
+        /* Modal for Registration */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: rgba(26, 31, 46, 0.95);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 900px;
+            padding: 40px;
+            position: relative;
+            transform: translateY(50px);
+            transition: transform 0.5s ease;
+            border: 3px solid #ff5e00;
+            box-shadow: 0 0 50px rgba(255, 94, 0, 0.5);
+            overflow: hidden;
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        .modal-content:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 94, 0, 0.8);
+            border: none;
+            color: #fff;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .close-modal:hover {
+            background: rgba(255, 94, 0, 1);
+            transform: rotate(90deg);
+        }
+        
+        .modal-title {
+            font-size: 2.2rem;
+            color: #ffcc00;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        }
+        
+        .modal-iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 3px solid #ff5e00;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .footer-note {
+            color: #aaa;
+            font-size: 1rem;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 94, 0, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #ff5e00;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 94, 0, 0.5);
+        }
+        
+        .social-icon:hover {
+            background: rgba(255, 94, 0, 0.8);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 94, 0, 0.5);
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.8em;
+            h1 {
+                font-size: 2.2rem;
             }
             
-            .section-title {
-                font-size: 1.4em;
+            .subtitle {
+                font-size: 1.2rem;
             }
             
-            .match-details {
-                grid-template-columns: 1fr;
+            .matches-section {
+                flex-direction: column;
+            }
+            
+            .match-card {
+                width: 100%;
+            }
+            
+            .link-card {
+                min-width: 100%;
+            }
+            
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+            }
+            
+            .modal-iframe {
+                height: 400px;
+            }
+            
+            .character-img {
+                width: 150px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>✨ DESI FF ESPORTS ✨</h1>
-            <div class="subtitle">🔥 SUNDAY SHOWDOWN 🔥</div>
-        </div>
-
-        <div class="content">
-            <!-- Match Registration Section -->
-            <div class="section">
-                <h2 class="section-title">📝 Match Registration</h2>
-                <p style="font-size: 1.1em; line-height: 1.8; margin-bottom: 20px;">
-                    Welcome to the official registration page for <span class="highlight">Desi FF Esports — Sunday Showdown</span>! 
-                    Fill in your details correctly to confirm your slot for the weekly event.
-                </p>
-
-                <div class="match-details">
-                    <div class="detail-card">
-                        <div class="detail-icon">📅</div>
-                        <div class="detail-label">Match Date</div>
-                        <div class="detail-value">Sunday<br>28th December</div>
-                    </div>
-                    <div class="detail-card">
-                        <div class="detail-icon">⏰</div>
-                        <div class="detail-label">Time</div>
-                        <div class="detail-value">7:00 PM</div>
-                    </div>
-                    <div class="detail-card">
-                        <div class="detail-icon">💰</div>
-                        <div class="detail-label">Entry Fee</div>
-                        <div class="detail-value">₹5</div>
-                    </div>
-                    <div class="detail-card">
-                        <div class="detail-icon">🏆</div>
-                        <div class="detail-label">Prize Pool</div>
-                        <div class="detail-value">₹150</div>
-                    </div>
-                </div>
-
-                <div class="warning-box">
-                    <strong>⚠️ Important: </strong> Registration is mandatory. Slots are limited and will close once full.
-                </div>
-
-                <div style="text-align: center;">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdTCbvSysO-NplAzAkV5s_nheGFg7IM5aDw1JOQHCETd6s3ow/viewform?usp=header" 
-                       class="register-btn" 
-                       target="_blank">
-                        👉 REGISTER NOW 👈
-                    </a>
-                    <p style="opacity: 0.8; margin-top: 10px;">
-                        (You will be redirected to the official Google Registration Form)
-                    </p>
-                </div>
-
-                <div class="success-box">
-                    <ul class="info-list">
-                        <li>Submit the form <strong>only once</strong> with correct details</li>
-                        <li>Incomplete, incorrect, or duplicate entries will be disqualified</li>
-                        <li>Only registered players will receive the Room ID & Password</li>
-                    </ul>
-                </div>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <div class="ff-logo">FF</div>
+                <h1>SUNDAY SHOWDOWN <span style="color: #ff5e00;">LEADERBOARD</span> EDITION</h1>
+                <div class="ff-logo" style="transform: rotate(5deg);">🎮</div>
             </div>
-
-            <!-- Referral Bonus Section -->
-            <div class="section">
-                <h2 class="section-title">🎁 Referral Bonus</h2>
-                <div class="referral-box">
-                    <p style="font-size: 1.2em; margin-bottom: 15px;">
-                        Invite your friends to join the match and <span class="highlight">earn ₹5 per successful referral!</span>
-                    </p>
-                    <ul class="info-list">
-                        <li>Mention your referrer's name while filling out the form — they'll receive ₹5 per valid referral</li>
-                        <li>You can also refer others and earn your own bonus</li>
-                        <li>Referral amounts are credited only after referred players participate in the match</li>
-                    </ul>
-                </div>
-                <p style="font-size: 1.1em; margin-top: 15px;">
-                    💸 <strong>Note:</strong> Agar aap kisi ke referral se aaye hain, to unka naam clearly likhe registration form mein! 
-                </p>
-            </div>
-
-            <!-- Official Links Section -->
-            <div class="section">
-                <h2 class="section-title">📢 Official Updates & Community Links</h2>
-                <p style="font-size: 1.1em; margin-bottom: 20px;">
-                    All match updates, Room IDs, and Passwords are shared <span class="highlight">only</span> through our official channels.  
-                    Stay connected for announcements, tournament schedules, and winner highlights! 
-                </p>
-
-                <div class="social-links">
-                    <a href="https://chat.whatsapp.com/KWccIOlO29f3BxIk9lzPh6" class="social-btn" target="_blank">
-                        <span class="social-icon">💬</span>
-                        <span>Join WhatsApp Community</span>
-                    </a>
-                    <a href="https://whatsapp.com/channel/0029Vb7tFNp7z4kgQcIyxV27" class="social-btn" target="_blank">
-                        <span class="social-icon">📣</span>
-                        <span>Follow WhatsApp Channel</span>
-                    </a>
-                    <a href="https://www.instagram.com/desi_ff_esports" class="social-btn" target="_blank">
-                        <span class="social-icon">📸</span>
-                        <span>Follow on Instagram (@desi_ff_esports)</span>
-                    </a>
-                </div>
-
-                <div class="warning-box" style="margin-top: 20px;">
-                    <strong>⚠️ Mandatory:</strong> Join these channels to receive match updates and room details! 
-                </div>
-            </div>
+            <p class="subtitle">🔥 Ek naya aur exciting leaderboard match aa raha hai 💥</p>
+            <p class="subtitle">📅 Sunday, 11 January 2026 | ⏰ 7:00 PM IST</p>
         </div>
-
-        <div class="footer">
-            @desi_ff_esports | Official Esports Organizer of Weekly Free Fire Events
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container main-content">
+        <!-- Event Highlight -->
+        <div class="event-highlight">
+            <p class="highlight-text">📊 Rank decide hoga kills + survival se! Bring your own squad or play solo!</p>
         </div>
-    </div>
-</body>
-</html>
+        
+        <!-- Character Image -->
+        <div class="character-container">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="FreeFire Character" class="character-img">
+        </div>
+        
+        <!-- Matches Section -->
+        <h2 class="section-title"><i class="fas fa-trophy"></i> MATCH DETAILS</h2>
+        <div class="matches-section">
+            <!-- Paid Match -->
+            <div class="match-card paid">
+                <h3 class="match-title"><i class="fas fa-crown"></i> MATCH 1 – PAID MATCH</h3>
+                <p><i class="far fa-calendar"></i> <strong>Date:</strong> Sunday, 11 January 2026</p>
+                <p><i class="far fa-clock"></i> <strong>Time:</strong> 7:00 PM IST</p>
+                
+                <div class="prize-info">
+                    <p><i class="fas fa-rupee-sign"></i> <strong>Entry Fee:</strong> ₹10</p>
+                    <p><i class="fas fa-award"></i> <strong>Winner Prize:</strong> <span class="prize-amount">₹200 Cash</span></p>
+                </div>
+                
+                <p><i class="fas fa-info-circle"></i> Leaderboard ranking based on performance</p>
+                <p><i class="fas fa-users"></i> Squad or Solo - Your choice!</p>
+            </div>
+            
+            <!-- Free Match -->
+            <div class="match-card free">
+                <h3 class="match-title"><i class="fas fa-gift"></i> MATCH 2 – FREE MATCH</h3>
+                <p><i class="far fa-calendar"></i> <strong>Date:</strong> Sunday, 11 January 2026</p>
+  
